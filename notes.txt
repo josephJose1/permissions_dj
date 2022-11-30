@@ -1,0 +1,15 @@
+usage of Django’s authentication system in its default configuration.
+
+create environment 
+
+python3 -m pip install --user --upgrade pip
+python3 -m pip --version
+source env/bin/activate
+django-admin startproject core .
+python3 startapp inventory
+python3 manage.py startapp inventory
+
+python3 manage.py migrate
+
+intall vscode extentions
+sudo apt install sqlite3
