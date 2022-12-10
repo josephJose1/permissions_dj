@@ -13,3 +13,25 @@ python3 manage.py migrate
 
 intall vscode extentions
 sudo apt install sqlite3
+
+create user using shell!!
+
+
+10:00
+Commom authorisation methodologies
+Role-based access controls (RBAC)
+ATribute-based access control (ABAC)
+
+capture of DML Database
+with superuser permission add view user to staff...autmaticly staff is able to see our user.
+
+#create inventory models
+#makemigrations
+#migrate
+
+#add models in admin panel
+
+#maximun recursion error
+using tow ** in place of one
+
+#disabled permissions to edit some sort of fields in admin modeule
