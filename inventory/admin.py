@@ -14,6 +14,7 @@ class ProductAdmin(GuardedModelAdmin):
         if super().has_module_permission(request):
             #why we do that? we don't want to granted access to model, we want to granted access to object permission
             return True
+        return self.get_model_objects(request).exists()
     
     def get_queryset(self, request):
         if request.user.is_superuser:
@@ -33,14 +34,14 @@ class ProductAdmin(GuardedModelAdmin):
         if obj:
             return request.user.has_perm(f'{opts.app_label}.{code_name}', obj)
         else:
-            return True
+            return True #if it's False #everything is forbidden
     def get_model_objects(self, request, action=None, klass=None):
         opts = self.opts
-        actions = [action]
+        actions = [action] if action else ['view', 'edit', 'delete', 'add']
         klass = klass if klass else opts.model
         model_name = klass._meta.model_name
         return get_objects_for_user(user=request.user, perms=[f'{perm}_{model_name}' for perm in actions], klass=klass, any_perm=True)
-    
+        #klass cannot be None
     
     
     def has_view_permission(self, request, obj=None):
