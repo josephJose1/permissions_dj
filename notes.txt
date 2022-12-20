@@ -63,3 +63,6 @@ AUTHENTICATION_BACKENDS = (
  #why we do that? we don't want to granted access to model, we want to granted access to object permission
 
  #add and remove model permissions
+
+ #minuto 38 #next task
+ show product that has permisiions but doesn't show otherwise.
